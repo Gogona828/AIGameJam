@@ -6,13 +6,14 @@ using UnityEngine.EventSystems;
 public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     public System.Action onClickCallBack;
-    private bool wasDuplicated;
     private GameObject replicatedObjects;
     private Transform parentObject;
+    private ItemBase itemBase;
 
     private void Start()
     {
         parentObject = transform.parent.transform;
+        itemBase = GetComponent<ItemBase>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -24,8 +25,9 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("長押し");
-        if (wasDuplicated) return;
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         gameObject.AddComponent<DragObject>();
     }
 
