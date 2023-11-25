@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 
 public class ItemBase : MonoBehaviour
 {
+    public bool isTouchingSameType = false;
+    
     [SerializeField, Tooltip("アイテムのIDを入れる")]
     private int itemID;
 
@@ -30,5 +33,11 @@ public class ItemBase : MonoBehaviour
         itemType = itemData.type;
         itemAmong = itemData.among;
         itemImage.sprite = itemData.sprite;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.TryGetComponent(out ItemBase _itemBase)) return;
+        Debug.Log(other.gameObject.name);
     }
 }
