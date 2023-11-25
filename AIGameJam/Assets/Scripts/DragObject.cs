@@ -5,20 +5,12 @@ using UnityEngine.EventSystems;
 
 public class DragObject : MonoBehaviour, IDragHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    private Vector3 mousePosition;
+    
     public void OnDrag(PointerEventData data)
     {
-        print($"drag");
+        mousePosition = Input.mousePosition;
+        transform.position = mousePosition;
+        
     }
 }
