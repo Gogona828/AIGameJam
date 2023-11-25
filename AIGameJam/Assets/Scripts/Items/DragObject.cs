@@ -11,6 +11,5 @@ public class DragObject : MonoBehaviour, IDragHandler
     {
         mousePosition = Input.mousePosition;
         transform.position = mousePosition;
-        
     }
 }
