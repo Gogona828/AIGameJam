@@ -9,7 +9,12 @@ public class ReleaseSkill : MonoBehaviour
     
     [SerializeField, Tooltip("スキルの解放数")]
     private int skillReleaseNum = 0;
-    [SerializeField, Tooltip("スキルの")]
+
+    [SerializeField, Tooltip("スキルの画像")]
+    private CanvasGroup[] skillImages;
+
+    [SerializeField, Tooltip("スキルの能力")]
+    private SaveItem saveItem;
 
     private void Awake()
     {
@@ -17,18 +22,28 @@ public class ReleaseSkill : MonoBehaviour
         else Destroy(this);
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < skillImages.Length; i++) {
+            skillImages[i].alpha = 0;
+        }
+    }
+
     public void AddSkillReleaseCount()
     {
         skillReleaseNum++;
+        if (skillImages.Length < skillReleaseNum) return;
         ActivateSkill();
     }
 
     private void ActivateSkill()
     {
+        skillImages[skillReleaseNum - 1].alpha = 1;
         switch (skillReleaseNum)
         {
             case 1:
-                Debug.Log("ストック可能！");
+                saveItem.isSkillReleased = true;
+                saveItem.gameObject.tag = "SavePosition";
                 break;
             case 2:
                 Debug.Log("レーン速度一時アップ！");

@@ -26,8 +26,11 @@ public class ItemBase : MonoBehaviour
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
     // 複製されたもの
+    [SerializeField]
     private GameObject copyItem;
+    [SerializeField]
     private bool canBeMixed = false;
+    [SerializeField]
     private bool isTouchingAny = false;
     
     // Start is called before the first frame update
@@ -82,16 +85,20 @@ public class ItemBase : MonoBehaviour
         isTouchingAny = true;
         canBeMixed = (copyItem && isDragged) ? true : false;
         if (!canBeMixed) return;
-        if (copyItem.name == other.gameObject.name && isDragged) {
-            Destroy(gameObject);
-            return;
+        if (copyItem.name == other.gameObject.name && isDragged && !(/*other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("SavePosition") || */other.gameObject.CompareTag("SaveItem")))
+        {
+                Debug.Log($"{copyItem.name} : {other.gameObject.name}");
+                Destroy(gameObject);
+                return;
         }
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
-            if (itemType != _itemBase.itemType || itemAmong >= 10 || _itemBase.itemAmong >= 10) {
+            if (!gameObject.CompareTag("SaveItem") && itemType != _itemBase.itemType || itemAmong >= 10 || _itemBase.itemAmong >= 10) {
+                Debug.Log($"不可: {_itemBase.gameObject.tag} & {gameObject.tag}");
                 Destroy(gameObject);
                 return;
             }
+            if (!gameObject.CompareTag("Item") || !other.gameObject.CompareTag("Item")) return;
             MixItem(other.gameObject, _itemBase);
         }
     }
@@ -106,7 +113,7 @@ public class ItemBase : MonoBehaviour
         Debug.Log("mix!");
         _itemBase.itemAmong += itemAmong;
         _mixTarget.transform.localScale += transform.localScale * _itemBase.itemAmong / rateGettingLarge;
-        Debug.Log($"{_itemBase.itemAmong} / {_mixTarget.transform.localScale.x}");
+        Debug.Log($"{_itemBase.gameObject.tag} / {gameObject.tag}");
         Destroy(gameObject);
         if (!copyItem) return;
         Destroy(copyItem);
@@ -114,7 +121,11 @@ public class ItemBase : MonoBehaviour
 
     public void DecideWhetherDestroy()
     {
-        if (!isTouchingAny || !copyItem) Destroy(gameObject);
+        if (!isTouchingAny || !copyItem)
+        {
+            Debug.Log($"捨てられた: {gameObject.name}");
+            Destroy(gameObject);
+        }
     }
 
     public void RemoveCopyItem()
