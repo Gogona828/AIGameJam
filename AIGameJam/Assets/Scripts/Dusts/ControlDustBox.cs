@@ -33,14 +33,15 @@ public class ControlDustBox : MonoBehaviour
     private void Start()
     {
         image = GetComponent<Image>();
-        storingQuantity = storingMaxQuantity / 2;
+        if (boxType != ItemDataBase.ItemType.Other) storingQuantity = storingMaxQuantity / 2;
+        else storingQuantity = 0;
         MoveGauge();
     }
 
     private void FixedUpdate()
     {
         elapsedTime += Time.deltaTime;
-        if (elapsedTime >= decreaseInterval)
+        if (elapsedTime >= decreaseInterval && boxType != ItemDataBase.ItemType.Other)
         {
             storingQuantity--;
             MoveGauge();
@@ -70,7 +71,9 @@ public class ControlDustBox : MonoBehaviour
         storingQuantity += itemBase.GetItemAmong();
         if (storingQuantity >= storingMaxQuantity) {
             storingQuantity = storingMaxQuantity;
+            if (boxType != ItemDataBase.ItemType.Other) return;
             ReleaseSkill.instance.AddSkillReleaseCount();
+            storingQuantity = 0;
         }
         Debug.Log($"{gameObject.name}: {storingQuantity}");
         MoveGauge();
@@ -79,8 +82,9 @@ public class ControlDustBox : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!itemBase) return;
-        if (itemBase.GetItemType() != boxType || boxType.ToString() == "Other") return;
+        if (itemBase.GetItemType() != boxType && boxType != ItemDataBase.ItemType.Other) return;
         canBeDiscard = true;
+        Debug.Log($"{boxType}");
         
         if (!customButton) customButton = other.gameObject.GetComponent<CustomButton>();
         
