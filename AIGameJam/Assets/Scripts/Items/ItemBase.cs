@@ -38,6 +38,11 @@ public class ItemBase : MonoBehaviour
         GetItemData();
     }
 
+    private void Update()
+    {
+        if (transform.position.x <= -1000 || transform.position.x >= 3000 || transform.position.y <= -500) Destroy(gameObject);
+    }
+
     private void GetItemData()
     {
         itemType = itemData.type;

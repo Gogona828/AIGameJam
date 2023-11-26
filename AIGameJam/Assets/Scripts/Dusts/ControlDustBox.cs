@@ -13,6 +13,12 @@ public class ControlDustBox : MonoBehaviour
     private ItemDataBase.ItemType boxType;
     [SerializeField, Tooltip("格納している量")]
     private int storingQuantity;
+    [SerializeField, Tooltip("格納できる最大量")]
+    private int storingMaxQuantity = 100;
+    [SerializeField, Tooltip("ゲージ")]
+    private Slider storingGauge;
+    [SerializeField, Tooltip("ゲージが減少する間隔")]
+    private float decreaseInterval = 2;
     [SerializeField, Tooltip("閉じている差分")]
     private Sprite closedDifferencial;
     [SerializeField, Tooltip("開いている差分")]
@@ -22,10 +28,29 @@ public class ControlDustBox : MonoBehaviour
     private bool isOpend = false;
     private ItemBase itemBase;
     private CustomButton customButton;
+    private float elapsedTime;
 
     private void Start()
     {
         image = GetComponent<Image>();
+        storingQuantity = storingMaxQuantity / 2;
+        MoveGauge();
+    }
+
+    private void FixedUpdate()
+    {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= decreaseInterval)
+        {
+            storingQuantity--;
+            MoveGauge();
+            elapsedTime = 0;
+        }
+    }
+
+    private void MoveGauge()
+    {
+        storingGauge.value = (float)storingQuantity / (float)storingMaxQuantity;
     }
 
     public void OpenDustBox()
@@ -43,8 +68,12 @@ public class ControlDustBox : MonoBehaviour
     private void StoreGarbage()
     {
         storingQuantity += itemBase.GetItemAmong();
+        if (storingQuantity >= storingMaxQuantity) {
+            storingQuantity = storingMaxQuantity;
+            ReleaseSkill.instance.AddSkillReleaseCount();
+        }
         Debug.Log($"{gameObject.name}: {storingQuantity}");
-        // TODO:ゲージに反映させる。
+        MoveGauge();
     }
 
     private void OnTriggerStay2D(Collider2D other)
