@@ -15,7 +15,7 @@ MonoBehaviour:
   itemDatas:
   - id: 0
     type: 0
-    among: 1
+    among: 5
     sprite: {fileID: 21300000, guid: f6598e07d53570d4689ec981c0354337, type: 3}
   - id: 1
     type: 1

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ItemBase : MonoBehaviour
 {
     public bool isDragged = false;
+    public bool isDuringDrag = false;
+    public bool isCopied = false;
     
     [SerializeField, Tooltip("アイテムのIDを入れる")]
     private int itemID;
@@ -22,6 +24,7 @@ public class ItemBase : MonoBehaviour
 
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
+    [SerializeField]
     private GameObject copyItem;
     private bool canBeMixed = false;
     private bool isTouchingAny = false;
@@ -37,16 +40,26 @@ public class ItemBase : MonoBehaviour
     private void GetItemData()
     {
         itemType = itemData.type;
-        itemAmong = itemData.among;
+        if (!isCopied) itemAmong = itemData.among;
         itemImage.sprite = itemData.sprite;
     }
 
-    public void SetItemID(int id)
+    public void SetItemID(int _id)
     {
-        itemID = id;
+        itemID = _id;
+    }
+    
+    public void SetItemAmong(int _among)
+    {
+        itemAmong = _among;
     }
 
-    public void SetcopyItem(GameObject _copyItem)
+    public int GetItemAmong()
+    {
+        return itemAmong;
+    }
+
+    public void SetCopyItem(GameObject _copyItem)
     {
         copyItem = _copyItem;
     }
@@ -64,7 +77,7 @@ public class ItemBase : MonoBehaviour
         }
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
-            if (itemType != _itemBase.itemType) {
+            if (itemType != _itemBase.itemType || itemAmong >= 10 || _itemBase.itemAmong >= 10) {
                 Destroy(gameObject);
                 return;
             }
@@ -81,8 +94,8 @@ public class ItemBase : MonoBehaviour
     {
         Debug.Log("mix!");
         _itemBase.itemAmong += itemAmong;
-        _mixTarget.transform.localScale += new Vector3(itemAmong, itemAmong, itemAmong) / rateGettingLarge;
-        Debug.Log(_mixTarget.transform.localScale);
+        _mixTarget.transform.localScale += transform.localScale * _itemBase.itemAmong / rateGettingLarge;
+        Debug.Log($"{_itemBase.itemAmong} / {_mixTarget.transform.localScale.x}");
         Destroy(gameObject);
         if (!copyItem) return;
         Destroy(copyItem);
