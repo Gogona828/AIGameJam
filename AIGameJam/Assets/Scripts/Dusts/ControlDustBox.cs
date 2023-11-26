@@ -23,6 +23,8 @@ public class ControlDustBox : MonoBehaviour
     private Sprite closedDifferencial;
     [SerializeField, Tooltip("開いている差分")]
     private Sprite openingDifferencial;
+    [SerializeField]
+    private MoveBackGround moveBG;
 
     private Image image;
     private bool isOpend = false;
@@ -45,6 +47,7 @@ public class ControlDustBox : MonoBehaviour
         {
             storingQuantity--;
             MoveGauge();
+            moveBG?.SetVelocityDimater(storingQuantity);
             elapsedTime = 0;
         }
     }

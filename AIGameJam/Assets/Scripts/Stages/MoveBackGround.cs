@@ -6,6 +6,8 @@ public class MoveBackGround : MonoBehaviour
 {
     [SerializeField, Tooltip("移動速度")]
     private float moveSpeed;
+    [SerializeField, Tooltip("速度倍率")]
+    private float velocityDiameter = 1;
 
     private StageDataBase stageDB;
     private Vector3 movePosision;
@@ -21,7 +23,12 @@ public class MoveBackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= movePosision * Time.deltaTime;
+        transform.position -= movePosision * Time.deltaTime * velocityDiameter;
+    }
+
+    public void SetVelocityDimater(float _diameter)
+    {
+        velocityDiameter = _diameter / 100;
     }
 
     private void SetMoveSpeed(float _spd)
