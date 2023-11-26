@@ -27,6 +27,11 @@ public class DataBaseManager : MonoBehaviour
         return null;
     }
 
+    public int GetItemDataCount()
+    {
+        return itemDB.itemDatas.Count;
+    }
+
     public StageDataBase GetStageData()
     {
         return stageDB;

@@ -17,6 +17,9 @@ public class ItemBase : MonoBehaviour
     [SerializeField, Tooltip("アイテムの量")]
     private int itemAmong;
 
+    [SerializeField, Tooltip("アイテムが大きくなる倍率")]
+    private float rateGettingLarge = 10;
+
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
     private GameObject copyItem;
@@ -38,6 +41,11 @@ public class ItemBase : MonoBehaviour
         itemImage.sprite = itemData.sprite;
     }
 
+    public void SetItemID(int id)
+    {
+        itemID = id;
+    }
+
     public void SetcopyItem(GameObject _copyItem)
     {
         copyItem = _copyItem;
@@ -50,10 +58,16 @@ public class ItemBase : MonoBehaviour
         isTouchingAny = true;
         canBeMixed = (copyItem && isDragged) ? true : false;
         if (!canBeMixed) return;
-        if (copyItem.name == other.gameObject.name) return;
+        if (copyItem.name == other.gameObject.name && isDragged) {
+            Destroy(gameObject);
+            return;
+        }
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
-            if (itemType != _itemBase.itemType) return;
+            if (itemType != _itemBase.itemType) {
+                Destroy(gameObject);
+                return;
+            }
             MixItem(other.gameObject, _itemBase);
         }
     }
@@ -66,14 +80,16 @@ public class ItemBase : MonoBehaviour
     public void MixItem(GameObject _mixTarget, ItemBase _itemBase)
     {
         Debug.Log("mix!");
-        itemAmong += _itemBase.itemAmong;
-        _mixTarget.transform.localScale += new Vector3(itemAmong, itemAmong, itemAmong) / 10;
+        _itemBase.itemAmong += itemAmong;
+        _mixTarget.transform.localScale += new Vector3(itemAmong, itemAmong, itemAmong) / rateGettingLarge;
+        Debug.Log(_mixTarget.transform.localScale);
         Destroy(gameObject);
+        if (!copyItem) return;
         Destroy(copyItem);
     }
 
     public void DecideWhetherDestroy()
     {
-        if (!isTouchingAny) Destroy(gameObject);
+        if (!isTouchingAny || !copyItem) Destroy(gameObject);
     }
 }

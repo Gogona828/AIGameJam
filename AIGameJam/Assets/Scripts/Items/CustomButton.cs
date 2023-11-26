@@ -9,6 +9,7 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     private GameObject replicatedObjects;
     private Transform parentObject;
     private ItemBase itemBase;
+    private DragObject dragObject;
 
     private void Start()
     {
@@ -29,12 +30,13 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
         itemBase.SetcopyItem(replicatedObjects);
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-        gameObject.AddComponent<DragObject>();
+        dragObject = gameObject.AddComponent<DragObject>();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         itemBase.isDragged= true;
+        dragObject.isDuringDrag = false;
         itemBase.DecideWhetherDestroy();
     }
 }
