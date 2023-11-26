@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: 8271d1a7eaa857e4bab646bcc5c22471
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 645
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d268d4b295528b45be913ab5619747a
+      internalID: -659601457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_1"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 645
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756a31de31fc5534397b5048c55bd558
+      internalID: 2102529107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_2"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 645
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc287a44e33245a4781e281439e1930c
+      internalID: -1949317355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_3"
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 645
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f55be596faa3f44beb698dc78b48c0
+      internalID: 705403351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_4"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 645
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf3b1d5c02a872459b0bc4c04ab9970
+      internalID: -878625480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_5"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6163b5cad6d2f46be9dc3aa3dbce80
+      internalID: -937862159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_6"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 266
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36551517903561b43b1231d6d90ab974
+      internalID: -1543827748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_7"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 266
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1cb26feba670e408edd9c2ac7ac9ad
+      internalID: -893870366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_8"
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 266
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebc70e8190ab5641b8512c2b1e9e7a6
+      internalID: 1467214064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet
+        featuring a futuristic rocket designed in vivid blue and white colors. The
+        rocket should have a red jet propu_9"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 266
+        width: 156
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac81fae8d7fdd64ea46ceccc6e51d96
+      internalID: 1971916407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_0": -659601457
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_1": 2102529107
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_2": -1949317355
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_3": 705403351
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_4": -878625480
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_5": -937862159
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_6": -1543827748
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_7": -893870366
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_8": 1467214064
+      "DALL\xB7E 2023-11-26 12.34.15 - Create a detailed pixel art sprite sheet featuring a futuristic rocket designed in vivid blue and white colors. The rocket should have a red jet propu_9": 1971916407
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
