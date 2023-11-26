@@ -111,4 +111,9 @@ public class ItemBase : MonoBehaviour
     {
         if (!isTouchingAny || !copyItem) Destroy(gameObject);
     }
+
+    public void RemoveCopyItem()
+    {
+        Destroy(copyItem);
+    }
 }

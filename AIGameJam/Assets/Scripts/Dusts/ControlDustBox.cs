@@ -58,6 +58,7 @@ public class ControlDustBox : MonoBehaviour
         if (customButton.shouldUpPointer)
         {
             StoreGarbage();
+            itemBase.RemoveCopyItem();
             Destroy(other.gameObject);
         }
     }
