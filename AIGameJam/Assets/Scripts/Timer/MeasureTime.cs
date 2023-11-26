@@ -22,6 +22,7 @@ public class MeasureTime : MonoBehaviour
         minute = limitTime / 60;
         seconds = limitTime - minute * 60;
         remainingTime = limitTime;
+        ShowTime();
     }
 
     // Update is called once per frame
@@ -38,9 +39,14 @@ public class MeasureTime : MonoBehaviour
         minute = (int)remainingTime / 60;
         seconds = remainingTime - minute * 60;
 
+        ShowTime();
+        oldSeconds = seconds;
+    }
+
+    private void ShowTime()
+    {
         if ((int)seconds != (int)oldSeconds) {
             text.text = minute.ToString("00") + ":" + ((int)seconds).ToString("00");
         }
-        oldSeconds = seconds;
     }
 }
