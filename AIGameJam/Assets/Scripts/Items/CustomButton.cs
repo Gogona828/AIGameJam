@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     public System.Action onClickCallBack;
-    public bool shouldUpPointer;
+    public bool shouldUpPointer = false;
     private GameObject replicatedObjects;
     private Transform parentObject;
     private ItemBase itemBase;
@@ -27,8 +27,10 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("長押し");
         shouldUpPointer = false;
+        gameObject.layer = 6;
+        transform.SetParent(transform.parent.parent.parent.parent.parent);
+        
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
         itemBase.SetCopyItem(replicatedObjects);
         itemBase.isDuringDrag = true;
@@ -50,5 +52,6 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
         itemBase.isDragged= true;
         itemBase.DecideWhetherDestroy();
         shouldUpPointer = true;
+        gameObject.layer = 5;
     }
 }
