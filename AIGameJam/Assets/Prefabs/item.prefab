@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ed667b19600c54e98527aa8456a271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldUpPointer: 0
 --- !u!114 &8437145088916674385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,10 +107,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragged: 0
+  isDuringDrag: 0
+  isCopied: 0
   itemID: 0
   itemType: 0
   itemAmong: 0
   rateGettingLarge: 10
+  copyItem: {fileID: 0}
+  isTouchingAny: 0
 --- !u!50 &7969066332865343164
 Rigidbody2D:
   serializedVersion: 4

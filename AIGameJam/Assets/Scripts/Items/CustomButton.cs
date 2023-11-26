@@ -22,14 +22,19 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     public void OnPointerClick(PointerEventData eventData)
     {
         onClickCallBack?.Invoke();
-        Debug.Log("押された");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("長押し開始");
+        Debug.Log(gameObject.tag);
         shouldUpPointer = false;
         gameObject.layer = 6;
-        transform.SetParent(transform.parent.parent.parent.parent.parent);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        // int indexAbove = transform.root.childCount - 1;
+        // int targetIndex = Mathf.Clamp(transform.GetSiblingIndex() - 1, 0, indexAbove);
+        // transform.SetSiblingIndex(targetIndex);
+        if (transform.parent.parent != null) transform.SetParent(transform.parent.parent.parent.parent.parent);
         
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
         itemBase.SetCopyItem(replicatedObjects);
@@ -39,16 +44,19 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
         otherItemBase.isCopied = true;
         otherItemBase.isDuringDrag = true;
         otherItemBase.SetItemAmong(itemBase.GetItemAmong());
-        
+
+        if (!gameObject.GetComponent<Rigidbody2D>()) gameObject.AddComponent<Rigidbody2D>();
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        Destroy(gameObject.GetComponent<MoveStage>());
         
-        dragObject = gameObject.AddComponent<DragObject>();
+        if (!gameObject.GetComponent<DragObject>()) dragObject = gameObject.AddComponent<DragObject>();
         dragObject.itemInDrag = gameObject;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        Debug.Log("離した！");
         itemBase.isDragged= true;
         itemBase.DecideWhetherDestroy();
         shouldUpPointer = true;
