@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ItemBase : MonoBehaviour
 {
     public bool isDragged = false;
+    public bool isDuringDrag = false;
+    public bool isCopied = false;
     
     [SerializeField, Tooltip("アイテムのIDを入れる")]
     private int itemID;
@@ -17,8 +19,12 @@ public class ItemBase : MonoBehaviour
     [SerializeField, Tooltip("アイテムの量")]
     private int itemAmong;
 
+    [SerializeField, Tooltip("アイテムが大きくなる倍率")]
+    private float rateGettingLarge = 10;
+
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
+    [SerializeField]
     private GameObject copyItem;
     private bool canBeMixed = false;
     private bool isTouchingAny = false;
@@ -34,11 +40,26 @@ public class ItemBase : MonoBehaviour
     private void GetItemData()
     {
         itemType = itemData.type;
-        itemAmong = itemData.among;
+        if (!isCopied) itemAmong = itemData.among;
         itemImage.sprite = itemData.sprite;
     }
 
-    public void SetcopyItem(GameObject _copyItem)
+    public void SetItemID(int _id)
+    {
+        itemID = _id;
+    }
+    
+    public void SetItemAmong(int _among)
+    {
+        itemAmong = _among;
+    }
+
+    public int GetItemAmong()
+    {
+        return itemAmong;
+    }
+
+    public void SetCopyItem(GameObject _copyItem)
     {
         copyItem = _copyItem;
     }
@@ -50,10 +71,16 @@ public class ItemBase : MonoBehaviour
         isTouchingAny = true;
         canBeMixed = (copyItem && isDragged) ? true : false;
         if (!canBeMixed) return;
-        if (copyItem.name == other.gameObject.name) return;
+        if (copyItem.name == other.gameObject.name && isDragged) {
+            Destroy(gameObject);
+            return;
+        }
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
-            if (itemType != _itemBase.itemType) return;
+            if (itemType != _itemBase.itemType || itemAmong >= 10 || _itemBase.itemAmong >= 10) {
+                Destroy(gameObject);
+                return;
+            }
             MixItem(other.gameObject, _itemBase);
         }
     }
@@ -66,14 +93,16 @@ public class ItemBase : MonoBehaviour
     public void MixItem(GameObject _mixTarget, ItemBase _itemBase)
     {
         Debug.Log("mix!");
-        itemAmong += _itemBase.itemAmong;
-        _mixTarget.transform.localScale += new Vector3(itemAmong, itemAmong, itemAmong) / 10;
+        _itemBase.itemAmong += itemAmong;
+        _mixTarget.transform.localScale += transform.localScale * _itemBase.itemAmong / rateGettingLarge;
+        Debug.Log($"{_itemBase.itemAmong} / {_mixTarget.transform.localScale.x}");
         Destroy(gameObject);
+        if (!copyItem) return;
         Destroy(copyItem);
     }
 
     public void DecideWhetherDestroy()
     {
-        if (!isTouchingAny) Destroy(gameObject);
+        if (!isTouchingAny || !copyItem) Destroy(gameObject);
     }
 }

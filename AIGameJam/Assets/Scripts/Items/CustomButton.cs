@@ -9,6 +9,7 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     private GameObject replicatedObjects;
     private Transform parentObject;
     private ItemBase itemBase;
+    private ItemBase otherItemBase;
 
     private void Start()
     {
@@ -26,7 +27,13 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     {
         Debug.Log("長押し");
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
-        itemBase.SetcopyItem(replicatedObjects);
+        itemBase.SetCopyItem(replicatedObjects);
+        
+        otherItemBase = replicatedObjects.GetComponent<ItemBase>();
+        otherItemBase.isCopied = true;
+        otherItemBase.isDuringDrag = true;
+        otherItemBase.SetItemAmong(itemBase.GetItemAmong());
+        
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         gameObject.AddComponent<DragObject>();
