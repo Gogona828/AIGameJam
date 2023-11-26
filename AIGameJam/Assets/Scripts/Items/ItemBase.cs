@@ -8,6 +8,7 @@ public class ItemBase : MonoBehaviour
 {
     public bool isDragged = false;
     public bool isDuringDrag = false;
+    // 複製されたものならtrue
     public bool isCopied = false;
     
     [SerializeField, Tooltip("アイテムのIDを入れる")]
@@ -24,7 +25,7 @@ public class ItemBase : MonoBehaviour
 
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
-    [SerializeField]
+    // 複製されたもの
     private GameObject copyItem;
     private bool canBeMixed = false;
     private bool isTouchingAny = false;
@@ -43,6 +44,16 @@ public class ItemBase : MonoBehaviour
         if (!isCopied) itemAmong = itemData.among;
         itemImage.sprite = itemData.sprite;
     }
+    
+    public int GetItemAmong()
+    {
+        return itemAmong;
+    }
+
+    public ItemDataBase.ItemType GetItemType()
+    {
+        return itemType;
+    }
 
     public void SetItemID(int _id)
     {
@@ -52,11 +63,6 @@ public class ItemBase : MonoBehaviour
     public void SetItemAmong(int _among)
     {
         itemAmong = _among;
-    }
-
-    public int GetItemAmong()
-    {
-        return itemAmong;
     }
 
     public void SetCopyItem(GameObject _copyItem)
@@ -104,5 +110,10 @@ public class ItemBase : MonoBehaviour
     public void DecideWhetherDestroy()
     {
         if (!isTouchingAny || !copyItem) Destroy(gameObject);
+    }
+
+    public void RemoveCopyItem()
+    {
+        Destroy(copyItem);
     }
 }
