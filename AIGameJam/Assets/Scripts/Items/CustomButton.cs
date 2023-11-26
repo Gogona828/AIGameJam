@@ -26,6 +26,7 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     {
         Debug.Log("長押し");
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
+        itemBase.SetcopyItem(replicatedObjects);
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         gameObject.AddComponent<DragObject>();
@@ -33,6 +34,7 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Destroy(gameObject);
+        itemBase.isDragged= true;
+        itemBase.DecideWhetherDestroy();
     }
 }

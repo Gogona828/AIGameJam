@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ItemBase : MonoBehaviour
 {
-    public bool isTouchingSameType = false;
+    public bool isDragged = false;
     
     [SerializeField, Tooltip("アイテムのIDを入れる")]
     private int itemID;
@@ -19,6 +19,9 @@ public class ItemBase : MonoBehaviour
 
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
+    private GameObject copyItem;
+    private bool canBeMixed = false;
+    private bool isTouchingAny = false;
     
     // Start is called before the first frame update
     void Start()
@@ -35,9 +38,42 @@ public class ItemBase : MonoBehaviour
         itemImage.sprite = itemData.sprite;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void SetcopyItem(GameObject _copyItem)
     {
-        if (!other.gameObject.TryGetComponent(out ItemBase _itemBase)) return;
-        Debug.Log(other.gameObject.name);
+        copyItem = _copyItem;
+    }
+
+    private void OnTriggerStay2D(Collider2D other) => OnTriggerEnter2D(other);
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        isTouchingAny = true;
+        canBeMixed = (copyItem && isDragged) ? true : false;
+        if (!canBeMixed) return;
+        if (copyItem.name == other.gameObject.name) return;
+        if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
+        {
+            if (itemType != _itemBase.itemType) return;
+            MixItem(other.gameObject, _itemBase);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isTouchingAny = false;
+    }
+
+    public void MixItem(GameObject _mixTarget, ItemBase _itemBase)
+    {
+        Debug.Log("mix!");
+        itemAmong += _itemBase.itemAmong;
+        _mixTarget.transform.localScale += new Vector3(itemAmong, itemAmong, itemAmong) / 10;
+        Destroy(gameObject);
+        Destroy(copyItem);
+    }
+
+    public void DecideWhetherDestroy()
+    {
+        if (!isTouchingAny) Destroy(gameObject);
     }
 }
