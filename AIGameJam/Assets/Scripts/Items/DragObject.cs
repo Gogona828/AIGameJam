@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class DragObject : MonoBehaviour, IDragHandler
 {
     private Vector3 mousePosition;
+    public GameObject itemInDrag;
     
     public void OnDrag(PointerEventData data)
     {
