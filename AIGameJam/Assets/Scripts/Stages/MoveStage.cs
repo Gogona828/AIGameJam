@@ -32,4 +32,9 @@ public class MoveStage : MonoBehaviour
     {
         moveSpeed = _spd;
     }
+
+    public void SetTravelingDirection(bool _isLeftGo)
+    {
+        isLeftGo = _isLeftGo;
+    }
 }
