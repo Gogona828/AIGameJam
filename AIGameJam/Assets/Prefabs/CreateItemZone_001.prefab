@@ -51,3 +51,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 9064722894430624681, guid: 84850c883e53fa1409cb177aa822a683, type: 3}
   generatingTimeSpacing: 1.5
+  isLeftGo: 0
+  controlDustBox: {fileID: 0}

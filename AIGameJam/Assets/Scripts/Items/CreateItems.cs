@@ -14,6 +14,8 @@ public class CreateItems : MonoBehaviour
     
     [SerializeField, Tooltip("進行方向")]
     private bool isLeftGo;
+    [SerializeField, Tooltip("青いゴミ箱")]
+    private ControlDustBox controlDustBox;
 
     private GameObject generatedItem;
     private ItemBase itemBase;
@@ -29,7 +31,7 @@ public class CreateItems : MonoBehaviour
     private void FixedUpdate()
     {
         elapsedTime += Time.deltaTime;
-        if (elapsedTime >= generatingTimeSpacing) {
+        if (elapsedTime >= generatingTimeSpacing / ManageCarrySystem.instance.CalcVelocityDiameter()) {
             CreateItem();
             elapsedTime = 0;
         }

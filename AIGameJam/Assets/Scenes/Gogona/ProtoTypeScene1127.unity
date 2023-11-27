@@ -2510,6 +2510,10 @@ PrefabInstance:
       propertyPath: isLeftGo
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: controlDustBox
+      value: 
+      objectReference: {fileID: 1349447109}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5414,6 +5418,7 @@ GameObject:
   - component: {fileID: 1349447106}
   - component: {fileID: 1349447108}
   - component: {fileID: 1349447109}
+  - component: {fileID: 1349447110}
   m_Layer: 5
   m_Name: BlueBox
   m_TagString: Untagged
@@ -5547,6 +5552,20 @@ MonoBehaviour:
   closedDifferencial: {fileID: 1147309475, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
   openingDifferencial: {fileID: -878684917, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   moveBG: {fileID: 0}
+--- !u!114 &1349447110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349447104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6f3a894db734efd871d38ca335a43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDiameter: 2
+  minDiameter: 0.5
 --- !u!1 &1358642627
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,6 +8220,10 @@ PrefabInstance:
       propertyPath: isLeftGo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: controlDustBox
+      value: 
+      objectReference: {fileID: 1349447109}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9564,6 +9587,10 @@ PrefabInstance:
       propertyPath: isLeftGo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: controlDustBox
+      value: 
+      objectReference: {fileID: 1349447109}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
