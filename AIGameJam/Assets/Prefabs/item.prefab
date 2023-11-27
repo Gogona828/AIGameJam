@@ -113,7 +113,12 @@ MonoBehaviour:
   itemType: 0
   itemAmong: 0
   rateGettingLarge: 10
+  imagesWhenMixed:
+  - {fileID: 21300000, guid: 76dd48cbe7ba68b4fbb3c89ab33065f0, type: 3}
+  - {fileID: 21300000, guid: 44e2a157cfe57834dbb05682324886fe, type: 3}
+  - {fileID: 21300000, guid: 2c0cd48b1b6c96249af0cb74fdf793e2, type: 3}
   copyItem: {fileID: 0}
+  canBeMixed: 0
   isTouchingAny: 0
 --- !u!50 &7969066332865343164
 Rigidbody2D:

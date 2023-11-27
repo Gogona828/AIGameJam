@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -31,12 +32,10 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
         shouldUpPointer = false;
         gameObject.layer = 6;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        // int indexAbove = transform.root.childCount - 1;
-        // int targetIndex = Mathf.Clamp(transform.GetSiblingIndex() - 1, 0, indexAbove);
-        // transform.SetSiblingIndex(targetIndex);
         if (transform.parent.parent != null) transform.SetParent(transform.parent.parent.parent.parent.parent);
         
         replicatedObjects = Instantiate(gameObject, transform.position, Quaternion.identity, parentObject);
+        replicatedObjects.GetComponent<Image>().sprite = gameObject.GetComponent<Image>().sprite;
         itemBase.SetCopyItem(replicatedObjects);
         itemBase.isDuringDrag = true;
         

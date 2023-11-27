@@ -23,6 +23,9 @@ public class ItemBase : MonoBehaviour
     [SerializeField, Tooltip("アイテムが大きくなる倍率")]
     private float rateGettingLarge = 10;
 
+    [SerializeField, Tooltip("Mixしたときにオブジェクトを変更する")]
+    private List<Sprite> imagesWhenMixed = new List<Sprite>();
+
     private ItemDataBase.ItemData itemData;
     private Image itemImage;
     // 複製されたもの
@@ -50,7 +53,7 @@ public class ItemBase : MonoBehaviour
     {
         itemType = itemData.type;
         if (!isCopied) itemAmong = itemData.among;
-        itemImage.sprite = itemData.sprite;
+        if (!isCopied) itemImage.sprite = itemData.sprite;
     }
     
     public int GetItemAmong()
@@ -113,7 +116,7 @@ public class ItemBase : MonoBehaviour
         Debug.Log("mix!");
         _itemBase.itemAmong += itemAmong;
         _mixTarget.transform.localScale += transform.localScale * _itemBase.itemAmong / rateGettingLarge;
-        Debug.Log($"{_itemBase.gameObject.tag} / {gameObject.tag}");
+        _mixTarget.gameObject.GetComponent<Image>().sprite = imagesWhenMixed[(int)itemType];
         Destroy(gameObject);
         if (!copyItem) return;
         Destroy(copyItem);
