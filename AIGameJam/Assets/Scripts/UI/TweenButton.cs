@@ -10,11 +10,14 @@ public class TweenButton : MonoBehaviour, IPointerClickHandler, IPointerDownHand
     [SerializeField] float ScaleMin = 0.9f;
     [SerializeField] float ScaleMax = 1.0f;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip SE;
+
     public bool OnceClick = true;
 
     public System.Action onClickCallback;
 
-    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] public CanvasGroup _canvasGroup;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -22,7 +25,7 @@ public class TweenButton : MonoBehaviour, IPointerClickHandler, IPointerDownHand
         {
             OnceClick = false;
             onClickCallback?.Invoke();
-
+            audioSource.PlayOneShot(SE);
         }
     }
 
