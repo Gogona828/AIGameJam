@@ -72,7 +72,7 @@ public class ControlDustBox : MonoBehaviour
         image.sprite = closedDifferencial;
     }
 
-    private void StoreGarbage()
+    public void StoreGarbage()
     {
         storingQuantity += itemBase.GetItemAmong();
         if (storingQuantity >= storingMaxQuantity) {
@@ -96,7 +96,7 @@ public class ControlDustBox : MonoBehaviour
         if (!customButton) customButton = other.gameObject.GetComponent<CustomButton>();
         
         // アイテムが離されたら
-        if (customButton.shouldUpPointer)
+        /*if (customButton.shouldUpPointer)
         {
             // ゴミを加算
             StoreGarbage();
@@ -104,7 +104,7 @@ public class ControlDustBox : MonoBehaviour
             itemBase.RemoveCopyItem();
             // 本体を破壊する
             Destroy(other.gameObject);
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)

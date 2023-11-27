@@ -7,6 +7,8 @@ public class ExitGame : MonoBehaviour
 {
     public static ExitGame instance;
 
+    [SerializeField] private GameObject endBoard;
+
     private void Awake()
     {
         if (!instance) instance = this;
@@ -17,5 +19,7 @@ public class ExitGame : MonoBehaviour
     {
         // TODO:　ゲームの結果を表示する
         Debug.Log($"ゲーム終了！");
+        endBoard.SetActive(true);
+        
     }
 }
