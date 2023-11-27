@@ -8,7 +8,7 @@ public class CloseButton : MonoBehaviour
     [SerializeField] GameObject CloseGameObject;
     void Start()
     {
-        tweenButton.onClickCallback= () => { CloseGameObject.SetActive(false); };
+        tweenButton.onClickCallback= () => { tweenButton.OnceClick = true; CloseGameObject.SetActive(false); };
     }
 
 }

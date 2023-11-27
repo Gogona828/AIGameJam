@@ -14,7 +14,7 @@ public class FinishSequence : MonoBehaviour
     void OnEnable()
     {
         Finish.DOFade(0f,1.0f).SetUpdate(true).SetLink(gameObject).SetDelay(2.0f);
-        BlackOutExit.DOAnchorPosY(520, 2.0f).SetUpdate(true).SetLink(gameObject).OnComplete(() => Result.SetActive(true));
+        BlackOutExit.DOAnchorPosY(520, 2.0f).SetUpdate(true).SetLink(gameObject).OnComplete(() => Result.SetActive(true)).SetDelay(1.0f);
         BlackOutExit.DOAnchorPosY(-800, 1.5f).SetUpdate(true).SetLink(gameObject).SetDelay(3.0f);
     }
 
