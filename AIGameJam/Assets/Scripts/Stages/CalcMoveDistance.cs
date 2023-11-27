@@ -15,6 +15,8 @@ public class CalcMoveDistance : MonoBehaviour
 
     [SerializeField, Tooltip("移動距離を表示")]
     private TextMeshProUGUI text;
+    [SerializeField, Tooltip("赤いゴミ箱を参照する")]
+    private ControlDustBox controlDustBox;
 
     private float pastPosition;
     
@@ -26,9 +28,11 @@ public class CalcMoveDistance : MonoBehaviour
 
     public void CalcDistance(float _nowPositionY)
     {
+        if (controlDustBox.GetStoringQuantity() == 0) return;
         moveDistance = pastPosition - _nowPositionY;
 
-        if (moveDistance > 0) {
+        if (moveDistance > 0)
+        {
             totalMoveDistance += moveDistance;
             ShowText();
             pastPosition = _nowPositionY;

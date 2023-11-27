@@ -31,6 +31,7 @@ public class ControlDustBox : MonoBehaviour
     private ItemBase itemBase;
     private CustomButton customButton;
     private float elapsedTime;
+    private ManageFood manageFood;
 
     private void Start()
     {
@@ -45,6 +46,11 @@ public class ControlDustBox : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= decreaseInterval && boxType != ItemDataBase.ItemType.Other)
         {
+            if (storingQuantity == 0) {
+                if (boxType == ItemDataBase.ItemType.Yellow) ExitGame.instance.EndGame();
+                elapsedTime = 0;
+                return;
+            }
             storingQuantity--;
             MoveGauge();
             moveBG?.SetVelocityDimater(storingQuantity);
@@ -115,5 +121,10 @@ public class ControlDustBox : MonoBehaviour
             isOpend = false;
             canBeDiscard = false;
         }
+    }
+
+    public int GetStoringQuantity()
+    {
+        return storingQuantity;
     }
 }
