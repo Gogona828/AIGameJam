@@ -10,6 +10,7 @@ public class TweenButton : MonoBehaviour, IPointerClickHandler, IPointerDownHand
     [SerializeField] float ScaleMin = 0.9f;
     [SerializeField] float ScaleMax = 1.0f;
 
+    private bool OnceClick = true;
 
     public System.Action onClickCallback;
 
@@ -17,7 +18,11 @@ public class TweenButton : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        onClickCallback?.Invoke();
+        if (OnceClick)
+        {
+            onClickCallback?.Invoke();
+            OnceClick = false;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
