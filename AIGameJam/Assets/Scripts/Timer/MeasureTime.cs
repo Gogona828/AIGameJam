@@ -29,7 +29,7 @@ public class MeasureTime : MonoBehaviour
     void Update()
     {
         if (remainingTime <= 0) {
-            // TODO: ゲーム終了フラグ立てろ
+            ExitGame.instance.EndGame();
             return;
         }
 
