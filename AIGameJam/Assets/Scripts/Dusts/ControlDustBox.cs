@@ -40,7 +40,7 @@ public class ControlDustBox : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ExitGame.hasFinishedGame) return;
+        if (ExitGame.hasFinishedGame || !StartGame.shouldStartingGame) return;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= decreaseInterval && boxType != ItemDataBase.ItemType.Other)
         {

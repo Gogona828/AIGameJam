@@ -28,6 +28,7 @@ public class MeasureTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!StartGame.shouldStartingGame) return;
         if (remainingTime <= 0) {
             ExitGame.instance.EndGame();
             return;

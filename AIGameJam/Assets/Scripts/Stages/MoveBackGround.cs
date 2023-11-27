@@ -25,6 +25,7 @@ public class MoveBackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!StartGame.shouldStartingGame) return;
         transform.position -= movePosision * Time.deltaTime * velocityDiameter;
         calcMoveDistance.CalcDistance(transform.localPosition.y);
     }

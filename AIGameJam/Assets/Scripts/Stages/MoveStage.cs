@@ -25,6 +25,7 @@ public class MoveStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!StartGame.shouldStartingGame) return;
         transform.position += movePosision * Time.deltaTime * ManageCarrySystem.instance.CalcVelocityDiameter();
     }
 

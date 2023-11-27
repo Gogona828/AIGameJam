@@ -30,6 +30,7 @@ public class CreateItems : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (ExitGame.hasFinishedGame || !StartGame.shouldStartingGame) return;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= generatingTimeSpacing / ManageCarrySystem.instance.CalcVelocityDiameter()) {
             CreateItem();
