@@ -14,7 +14,7 @@ public class SceneChangeButton : MonoBehaviour
     [SerializeField] GameObject button1;
     [SerializeField] GameObject button2;
 
-    [SerializeField] [Tooltip("切り替え時トランジションするかどうか")] bool TransitionSwitch;
+    [SerializeField] [Tooltip("???????????g?????W?V????????????????")] bool TransitionSwitch;
 
     void Start()
     {
@@ -24,14 +24,14 @@ public class SceneChangeButton : MonoBehaviour
 
             if (TransitionSwitch)
             {
-                tweenButton.onClickCallback = () => { BlackOut.DOAnchorPosY(520, 1.0f).SetLink(gameObject).OnStart(()=> { button1.SetActive(false); button2.SetActive(false); }).SetUpdate(true).SetEase(Ease.OutQuad).OnComplete(() => StartCoroutine("LoadYourAsyncScene")); };
+                tweenButton.onClickCallback = () => { BlackOut.DOAnchorPosY(520, 1.0f).SetLink(gameObject).OnStart(()=> { if (button1 != null || button2 != null) { button1.SetActive(false); button2.SetActive(false); } }).SetUpdate(true).SetEase(Ease.OutQuad).OnComplete(() => StartCoroutine("LoadYourAsyncScene")); };
             }
             else tweenButton.onClickCallback = () => StartCoroutine("LoadYourAsyncScene");
             Time.timeScale = 1.0f;
         }
         else
         {
-            Debug.Log(gameObject.name + "にTweenButtonがアタッチされていません。");
+            Debug.Log(gameObject.name + "??TweenButton???A?^?b?`???????????????B");
         }
     }
 
