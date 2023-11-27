@@ -963,7 +963,7 @@ MonoBehaviour:
   storingQuantity: 0
   storingMaxQuantity: 100
   storingGauge: {fileID: 357753059}
-  decreaseInterval: 5
+  decreaseInterval: 1.25
   closedDifferencial: {fileID: 1289212179, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
   openingDifferencial: {fileID: 2078787443, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   moveBG: {fileID: 0}
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   storingQuantity: 0
   storingMaxQuantity: 100
   storingGauge: {fileID: 40629200}
-  decreaseInterval: 3
+  decreaseInterval: 0.75
   closedDifferencial: {fileID: -266728808, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -118052550, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 0}
@@ -5308,6 +5308,7 @@ MonoBehaviour:
   moveDistance: 0
   totalMoveDistance: 0
   text: {fileID: 616143893}
+  controlDustBox: {fileID: 1361430474}
 --- !u!1 &1333266334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,7 +5543,7 @@ MonoBehaviour:
   storingQuantity: 0
   storingMaxQuantity: 100
   storingGauge: {fileID: 1866974109}
-  decreaseInterval: 4
+  decreaseInterval: 1
   closedDifferencial: {fileID: 1147309475, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
   openingDifferencial: {fileID: -878684917, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   moveBG: {fileID: 0}
@@ -5838,7 +5839,7 @@ MonoBehaviour:
   storingQuantity: 0
   storingMaxQuantity: 100
   storingGauge: {fileID: 272870698}
-  decreaseInterval: 2
+  decreaseInterval: 0.5
   closedDifferencial: {fileID: -1826592103, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -620261752, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 1321146243}
