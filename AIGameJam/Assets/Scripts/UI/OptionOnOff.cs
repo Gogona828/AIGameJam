@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionOnOff : MonoBehaviour
 {
-    private void OnEnable()
+    public void OnEnable()
     {
         Time.timeScale = 0f;
     }

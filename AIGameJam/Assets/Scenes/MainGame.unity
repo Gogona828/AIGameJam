@@ -2582,6 +2582,7 @@ GameObject:
   - component: {fileID: 333078761}
   - component: {fileID: 333078763}
   - component: {fileID: 333078764}
+  - component: {fileID: 333078765}
   m_Layer: 5
   m_Name: Option_Time
   m_TagString: Untagged
@@ -2731,6 +2732,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &333078765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333078759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b907cb1e8189646449c9058111779a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344647184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +2865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.4
   ScaleMax: 0.5
+  OnceClick: 1
   _canvasGroup: {fileID: 344647189}
 --- !u!1 &346267047
 GameObject:
@@ -3936,6 +3950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.6
   ScaleMax: 0.8
+  OnceClick: 1
   _canvasGroup: {fileID: 604723563}
 --- !u!114 &604723565
 MonoBehaviour:
@@ -5959,6 +5974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.7
   ScaleMax: 0.8
+  OnceClick: 1
   _canvasGroup: {fileID: 0}
 --- !u!1 &955408109
 GameObject:
@@ -9354,6 +9370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.7
   ScaleMax: 0.8
+  OnceClick: 1
   _canvasGroup: {fileID: 0}
 --- !u!114 &1621151473
 MonoBehaviour:
@@ -10632,6 +10649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.9
   ScaleMax: 1
+  OnceClick: 1
   _canvasGroup: {fileID: 1926085588}
 --- !u!114 &1926085590
 MonoBehaviour:
@@ -11688,4 +11706,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.6
   ScaleMax: 0.8
+  OnceClick: 1
   _canvasGroup: {fileID: 2128142265}
