@@ -28,7 +28,7 @@ public class CalcMoveDistance : MonoBehaviour
 
     public void CalcDistance(float _nowPositionY)
     {
-        if (controlDustBox.GetStoringQuantity() == 0) return;
+        if (controlDustBox.GetStoringQuantity() == 0 || ExitGame.hasFinishedGame) return;
         moveDistance = pastPosition - _nowPositionY;
 
         if (moveDistance > 0)
@@ -43,5 +43,10 @@ public class CalcMoveDistance : MonoBehaviour
     private void ShowText()
     {
         text.text = totalMoveDistance.ToString("F0");
+    }
+
+    public float GetTotalMoveDistance()
+    {
+        return totalMoveDistance;
     }
 }
