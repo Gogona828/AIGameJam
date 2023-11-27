@@ -25,7 +25,7 @@ public class MoveStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += movePosision * Time.deltaTime;
+        transform.position += movePosision * Time.deltaTime * ManageCarrySystem.instance.CalcVelocityDiameter();
     }
 
     private void SetMoveSpeed(float _spd)

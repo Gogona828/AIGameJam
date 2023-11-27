@@ -31,7 +31,6 @@ public class ControlDustBox : MonoBehaviour
     private ItemBase itemBase;
     private CustomButton customButton;
     private float elapsedTime;
-    private ManageFood manageFood;
 
     private void Start()
     {
