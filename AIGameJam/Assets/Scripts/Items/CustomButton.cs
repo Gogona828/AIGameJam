@@ -50,12 +50,11 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
         Destroy(gameObject.GetComponent<MoveStage>());
         
         if (!gameObject.GetComponent<DragObject>()) dragObject = gameObject.AddComponent<DragObject>();
-        dragObject.itemInDrag = gameObject;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("離した！");
+        dragObject.FindNearItem();
         itemBase.isDragged= true;
         itemBase.DecideWhetherDestroy();
         shouldUpPointer = true;

@@ -49,6 +49,7 @@ public class ItemBase : MonoBehaviour
         if (transform.position.x <= -1000 || transform.position.x >= 3000 || transform.position.y <= -500) Destroy(gameObject);
     }
 
+    #region 取得系
     private void GetItemData()
     {
         itemType = itemData.type;
@@ -65,7 +66,8 @@ public class ItemBase : MonoBehaviour
     {
         return itemType;
     }
-
+    #endregion
+    #region 設定系
     public void SetItemID(int _id)
     {
         itemID = _id;
@@ -80,19 +82,28 @@ public class ItemBase : MonoBehaviour
     {
         copyItem = _copyItem;
     }
+    #endregion
 
     private void OnTriggerStay2D(Collider2D other) => OnTriggerEnter2D(other);
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // 何かに触れているか
         isTouchingAny = true;
+        // 混ぜられるかを判定
         canBeMixed = (copyItem && isDragged) ? true : false;
+        // 混ぜられないならリターン
         if (!canBeMixed) return;
-        if (copyItem.name == other.gameObject.name && isDragged && !(/*other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("SavePosition") || */other.gameObject.CompareTag("SaveItem")))
+        // 「対象が複製物」でかつ「離されたアイテム」かつ「対象が保持されたアイテムでない」であれば自身を破壊
+        // = 離されたアイテムの場所が複製物の上で、通常アイテムと保持アイテム以外の上であれば離したものを破壊する。
+        if (copyItem.name == other.gameObject.name && isDragged && !(other.gameObject.CompareTag("Item") ||　other.gameObject.CompareTag("SaveItem")))
         {
-                Debug.Log($"{copyItem.name} : {other.gameObject.name}");
-                Destroy(gameObject);
-                return;
+            Debug.Log($"変なところで置いた：{copyItem.name} : {other.gameObject.name}");
+            Destroy(gameObject);
+            return;
+        }
+        else if (other.gameObject.CompareTag("Untagged")) {
+            Destroy(gameObject);
         }
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
@@ -102,7 +113,7 @@ public class ItemBase : MonoBehaviour
                 return;
             }
             if (!gameObject.CompareTag("Item") || !other.gameObject.CompareTag("Item")) return;
-            MixItem(other.gameObject, _itemBase);
+            // MixItem(other.gameObject, _itemBase);
         }
     }
 

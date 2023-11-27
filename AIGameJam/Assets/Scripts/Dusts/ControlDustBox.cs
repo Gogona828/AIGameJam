@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class ControlDustBox : MonoBehaviour
 {
-    public bool canBeDiscard = false;
-    
     [SerializeField, Tooltip("箱の属性")]
     private ItemDataBase.ItemType boxType;
     [SerializeField, Tooltip("格納している量")]
@@ -89,17 +87,22 @@ public class ControlDustBox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        // ItemBaseがないなら帰れ
         if (!itemBase) return;
+        // 「アイテムと箱の属性が違う」かつ「箱の属性がその他でない」なら帰れ
+        // = アイテムと箱の属性が同じまたは箱の属性がその他なら通る
         if (itemBase.GetItemType() != boxType && boxType != ItemDataBase.ItemType.Other) return;
-        canBeDiscard = true;
-        Debug.Log($"{boxType}");
         
         if (!customButton) customButton = other.gameObject.GetComponent<CustomButton>();
         
+        // アイテムが離されたら
         if (customButton.shouldUpPointer)
         {
+            // ゴミを加算
             StoreGarbage();
+            // 複製したアイテムも破壊
             itemBase.RemoveCopyItem();
+            // 本体を破壊する
             Destroy(other.gameObject);
         }
     }
@@ -118,7 +121,6 @@ public class ControlDustBox : MonoBehaviour
         if (isOpend) {
             CloseDustBox();
             isOpend = false;
-            canBeDiscard = false;
         }
     }
 
