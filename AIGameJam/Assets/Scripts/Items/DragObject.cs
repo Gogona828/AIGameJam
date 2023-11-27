@@ -11,6 +11,7 @@ public class DragObject : MonoBehaviour, IDragHandler
     private GameObject closestItem;
     private float closestDistance = Mathf.Infinity;
     private ItemBase itemBase;
+    private ItemBase otherItemBase;
 
     private void Start()
     {
@@ -36,13 +37,42 @@ public class DragObject : MonoBehaviour, IDragHandler
             }
         }
         Debug.Log($"一番近い: {closestItem}");
-        // TODO: 近いアイテムを返せる
-        itemBase.MixItem(closestItem, closestItem.GetComponent<ItemBase>());
+        if (!closestItem)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        otherItemBase = closestItem.GetComponent<ItemBase>();
+        if (itemBase?.GetCopyItem() == closestItem || closestItem.CompareTag("Untagged"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+        // if (closestItem.TryGetComponent(out ItemBase _itemBase)) otherItemBase = _itemBase;
+        
+        if (closestItem.TryGetComponent(out ControlDustBox _controlDustBox))
+        {
+            _controlDustBox.StoreGarbage();
+            itemBase.RemoveCopyItem();
+            Destroy(gameObject);
+        }
+        else if (otherItemBase?.GetItemType() != itemBase?.GetItemType())
+        {
+            Debug.Log($"can't mix {otherItemBase?.GetItemType()} and {itemBase?.GetItemType()}");
+            return;
+        }
+        else
+        {
+            if (itemBase.GetItemAmong() >= 10 || otherItemBase.GetItemAmong() >= 10) return;
+            Debug.Log("mixed!");
+            itemBase.MixItem(closestItem, closestItem.GetComponent<ItemBase>());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("DustBox"))
         {
             touchingItemsList.Add(other.gameObject);
         }
@@ -50,7 +80,7 @@ public class DragObject : MonoBehaviour, IDragHandler
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("DustBox"))
         {
             touchingItemsList.Remove(other.gameObject);
         }

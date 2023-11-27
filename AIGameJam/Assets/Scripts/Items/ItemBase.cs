@@ -66,6 +66,11 @@ public class ItemBase : MonoBehaviour
     {
         return itemType;
     }
+
+    public GameObject GetCopyItem()
+    {
+        return copyItem;
+    }
     #endregion
     #region 設定系
     public void SetItemID(int _id)
@@ -102,9 +107,10 @@ public class ItemBase : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        else if (other.gameObject.CompareTag("Untagged")) {
+        if (other.gameObject.CompareTag("Untagged")) {
             Destroy(gameObject);
         }
+        if (other.gameObject == copyItem) Destroy(gameObject);
         if (other.gameObject.TryGetComponent(out ItemBase _itemBase))
         {
             if (!gameObject.CompareTag("SaveItem") && itemType != _itemBase.itemType || itemAmong >= 10 || _itemBase.itemAmong >= 10) {
