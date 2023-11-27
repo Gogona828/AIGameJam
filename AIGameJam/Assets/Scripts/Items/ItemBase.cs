@@ -113,7 +113,7 @@ public class ItemBase : MonoBehaviour
                 return;
             }
             if (!gameObject.CompareTag("Item") || !other.gameObject.CompareTag("Item")) return;
-            MixItem(other.gameObject, _itemBase);
+            // MixItem(other.gameObject, _itemBase);
         }
     }
 

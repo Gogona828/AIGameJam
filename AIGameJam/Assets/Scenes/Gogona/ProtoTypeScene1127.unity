@@ -958,7 +958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f5accc10395e949acae312c3cba1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDiscard: 0
   boxType: 3
   storingQuantity: 0
   storingMaxQuantity: 100
@@ -2055,7 +2054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f5accc10395e949acae312c3cba1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDiscard: 0
   boxType: 1
   storingQuantity: 0
   storingMaxQuantity: 100
@@ -7365,7 +7363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f5accc10395e949acae312c3cba1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDiscard: 0
   boxType: 2
   storingQuantity: 0
   storingMaxQuantity: 100
@@ -7752,7 +7749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f5accc10395e949acae312c3cba1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDiscard: 0
   boxType: 0
   storingQuantity: 0
   storingMaxQuantity: 100
