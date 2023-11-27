@@ -542,6 +542,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.9
   ScaleMax: 1
+  audioSource: {fileID: 1344312529}
+  SE: {fileID: 8300000, guid: d3a96ff32d3f01949804fd91ecf53c10, type: 3}
+  OnceClick: 1
   _canvasGroup: {fileID: 960438301}
 --- !u!225 &960438301
 CanvasGroup:
@@ -602,7 +605,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 26b4d3e8086b16442bd245852ea33e93, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.483
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -805,8 +808,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.491
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1241,6 +1244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScaleMin: 0.9
   ScaleMax: 1
+  audioSource: {fileID: 1344312529}
+  SE: {fileID: 8300000, guid: d3a96ff32d3f01949804fd91ecf53c10, type: 3}
+  OnceClick: 1
   _canvasGroup: {fileID: 1819660845}
 --- !u!225 &1819660845
 CanvasGroup:

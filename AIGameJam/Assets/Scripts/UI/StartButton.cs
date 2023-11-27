@@ -9,6 +9,8 @@ public class StartButton : MonoBehaviour
     [SerializeField] TweenButton tweenButton;
     [SerializeField] CanvasGroup StartBoard;
     [SerializeField] TextMeshProUGUI ReadyGo;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip BGM;
 
     void Start()
     {
@@ -30,7 +32,7 @@ public class StartButton : MonoBehaviour
                 .Append(ReadyGo.DOFade(0, 2.0f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(1.0f)
             .OnComplete(() => ReadyGo.text = "Go!!"))
 
-                .Append(ReadyGo.DOFade(1.0f, 0.3f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad))
+                .Append(ReadyGo.DOFade(1.0f, 0.3f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).OnComplete(() => audioSource.PlayOneShot(BGM)))
 
                 .Append(ReadyGo.DOFade(0f, 0.2f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(0.5f)
                 .OnComplete(() => {
