@@ -37,6 +37,7 @@ public class StartButton : MonoBehaviour
                 .Append(ReadyGo.DOFade(0f, 0.2f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(0.5f)
                 .OnComplete(() => {
                     ReadyGo.gameObject.SetActive(false);
+                    StartGame.shouldStartingGame = true;
                     Time.timeScale = 1.0f;
                 }));
     }
