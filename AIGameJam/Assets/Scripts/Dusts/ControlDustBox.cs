@@ -129,4 +129,9 @@ public class ControlDustBox : MonoBehaviour
     {
         return storingQuantity;
     }
+
+    public ItemDataBase.ItemType GetBoxType()
+    {
+        return boxType;
+    }
 }
