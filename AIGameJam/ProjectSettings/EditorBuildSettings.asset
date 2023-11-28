@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: bbfd8b87e080adf45b83235d14638fee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainGame.unity
     guid: 3d2e3e2a71731694c846190aec872739
+  - enabled: 0
+    path: Assets/Scenes/Gogona/ProtoTypeScene1127.unity
+    guid: 7757e76dc6ae330408617a9469811a30
+  - enabled: 1
+    path: Assets/Scenes/Gogona/MainGame.unity
+    guid: 4c074255e030e4b8fa8b431627901442
   m_configObjects: {}
