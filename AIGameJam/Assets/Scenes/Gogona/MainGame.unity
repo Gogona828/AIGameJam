@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 3
   storingQuantity: 0
-  storingMaxQuantity: 100
+  storingMaxQuantity: 10
   storingGauge: {fileID: 357753059}
   decreaseInterval: 1.25
   closedDifferencial: {fileID: 1289212179, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
@@ -10486,7 +10486,7 @@ MonoBehaviour:
   storingQuantity: 0
   storingMaxQuantity: 100
   storingGauge: {fileID: 1866974109}
-  decreaseInterval: 1
+  decreaseInterval: 2
   closedDifferencial: {fileID: 1147309475, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
   openingDifferencial: {fileID: -878684917, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   moveBG: {fileID: 0}
@@ -10502,8 +10502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6f3a894db734efd871d38ca335a43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDiameter: 2
-  minDiameter: 0.5
+  maxDiameter: 4
+  minDiameter: 0.3
 --- !u!1 &1358410073
 GameObject:
   m_ObjectHideFlags: 0
@@ -10929,9 +10929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 0
   storingQuantity: 0
-  storingMaxQuantity: 100
+  storingMaxQuantity: 1000
   storingGauge: {fileID: 272870698}
-  decreaseInterval: 0.5
+  decreaseInterval: 1
   closedDifferencial: {fileID: -1826592103, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -620261752, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 1321146243}
