@@ -53,6 +53,11 @@ public class DragObject : MonoBehaviour, IDragHandler
         
         if (closestItem.TryGetComponent(out ControlDustBox _controlDustBox))
         {
+            if (itemBase.GetItemType() != _controlDustBox.GetBoxType() && _controlDustBox.GetBoxType() != ItemDataBase.ItemType.Other)
+            {
+                Destroy(gameObject);
+                return;
+            }
             _controlDustBox.StoreGarbage();
             itemBase.RemoveCopyItem();
             Destroy(gameObject);
