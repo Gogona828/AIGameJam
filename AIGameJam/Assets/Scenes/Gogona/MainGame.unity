@@ -4755,6 +4755,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10929,9 +10933,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 0
   storingQuantity: 0
-  storingMaxQuantity: 35
+  storingMaxQuantity: 40
   storingGauge: {fileID: 272870698}
-  decreaseInterval: 1
+  decreaseInterval: 1.2
   closedDifferencial: {fileID: -1826592103, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -620261752, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 1321146243}
@@ -12833,7 +12837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 44.949707, y: -22.299988}
+  m_AnchoredPosition: {x: 44.949707, y: -22.300049}
   m_SizeDelta: {x: 67.8995, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1611184852
@@ -14369,6 +14373,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16650,6 +16658,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

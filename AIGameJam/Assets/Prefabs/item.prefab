@@ -112,7 +112,7 @@ MonoBehaviour:
   itemID: 0
   itemType: 0
   itemAmong: 0
-  rateGettingLarge: 10
+  rateGettingLarge: 15
   imagesWhenMixed:
   - {fileID: 21300000, guid: 76dd48cbe7ba68b4fbb3c89ab33065f0, type: 3}
   - {fileID: 21300000, guid: 44e2a157cfe57834dbb05682324886fe, type: 3}
