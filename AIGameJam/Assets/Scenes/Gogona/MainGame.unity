@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 3
   storingQuantity: 0
-  storingMaxQuantity: 10
+  storingMaxQuantity: 5
   storingGauge: {fileID: 357753059}
   decreaseInterval: 1.25
   closedDifferencial: {fileID: 1289212179, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
@@ -2845,9 +2845,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 1
   storingQuantity: 0
-  storingMaxQuantity: 100
+  storingMaxQuantity: 15
   storingGauge: {fileID: 40629200}
-  decreaseInterval: 0.75
+  decreaseInterval: 1.5
   closedDifferencial: {fileID: -266728808, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -118052550, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 0}
@@ -3991,7 +3991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -173, y: -0.17949533}
+  m_AnchoredPosition: {x: -184.79, y: -0.17949533}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &484886463
@@ -4004,7 +4004,7 @@ Animator:
   m_GameObject: {fileID: 484886461}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cc390aa0845779b4190d0861bcc3e328, type: 2}
+  m_Controller: {fileID: 9100000, guid: ff9e7702632798a4498db4b6b3f50711, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4035,7 +4035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cad129fc3ae414b4a856653e7b950dc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4755,6 +4755,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5485,7 +5489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100000000000000000000000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
   m_sharedMaterial: {fileID: -2852651423796069751, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
@@ -6914,7 +6918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.705895, y: 17.1}
+  m_AnchoredPosition: {x: 1.7058105, y: 17.099976}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751939891
@@ -7745,8 +7749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd71656332343b34eae6a6a1a56cbc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScaleMin: 0.6
-  ScaleMax: 0.8
+  ScaleMin: 0.13
+  ScaleMax: 0.15
   audioSource: {fileID: 1761358055}
   SE: {fileID: 8300000, guid: d5ab530918dfa804394b90a66166fcf7, type: 3}
   OnceClick: 1
@@ -8186,7 +8190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFF15\u79D2\u9593\u30B4\u30DF\u888B\u5927\u91CF\u767A\u751F(CT15\u79D2)"
+  m_text: "\uFF15\u79D2\u9593\u30E2\u30CE\u888B\u5927\u91CF\u767A\u751F(CT15\u79D2)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
   m_sharedMaterial: {fileID: -2852651423796069751, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
@@ -8470,7 +8474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7, y: -182.17648}
+  m_AnchoredPosition: {x: 3.6999512, y: -182.17648}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033875720
@@ -10484,9 +10488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 2
   storingQuantity: 0
-  storingMaxQuantity: 100
+  storingMaxQuantity: 25
   storingGauge: {fileID: 1866974109}
-  decreaseInterval: 2
+  decreaseInterval: 3
   closedDifferencial: {fileID: 1147309475, guid: 4179b8c0bd1fbf94a8747f05b9eaa0c8, type: 3}
   openingDifferencial: {fileID: -878684917, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   moveBG: {fileID: 0}
@@ -10502,8 +10506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6f3a894db734efd871d38ca335a43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDiameter: 4
-  minDiameter: 0.3
+  maxDiameter: 9
+  minDiameter: 0.5
 --- !u!1 &1358410073
 GameObject:
   m_ObjectHideFlags: 0
@@ -10929,9 +10933,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxType: 0
   storingQuantity: 0
-  storingMaxQuantity: 1000
+  storingMaxQuantity: 40
   storingGauge: {fileID: 272870698}
-  decreaseInterval: 1
+  decreaseInterval: 1.2
   closedDifferencial: {fileID: -1826592103, guid: 8e9ae515ad5cc684bb7b9003e52ed1e5, type: 3}
   openingDifferencial: {fileID: -620261752, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   moveBG: {fileID: 1321146243}
@@ -11810,8 +11814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd71656332343b34eae6a6a1a56cbc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScaleMin: 0.7
-  ScaleMax: 0.8
+  ScaleMin: 0.18
+  ScaleMax: 0.2
   audioSource: {fileID: 1761358055}
   SE: {fileID: 8300000, guid: d5ab530918dfa804394b90a66166fcf7, type: 3}
   OnceClick: 1
@@ -12629,7 +12633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53.3, y: -165.23532}
+  m_AnchoredPosition: {x: 53.30005, y: -165.23532}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588959353
@@ -12833,7 +12837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 44.949707, y: -22.299988}
+  m_AnchoredPosition: {x: 44.949707, y: -22.300049}
   m_SizeDelta: {x: 67.8995, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1611184852
@@ -14369,6 +14373,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16579,11 +16587,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 689718579}
-  - {fileID: 1416690732}
-  - {fileID: 851932749}
   - {fileID: 593923483}
   - {fileID: 514410786}
   - {fileID: 2044189177}
+  - {fileID: 1416690732}
+  - {fileID: 851932749}
   m_Father: {fileID: 1985266779}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16650,6 +16658,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: generatingTimeSpacing
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7005460804874398967, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

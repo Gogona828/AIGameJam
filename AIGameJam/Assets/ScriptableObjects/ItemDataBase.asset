@@ -34,7 +34,7 @@ MonoBehaviour:
     among: 1
     sprite: {fileID: 21300000, guid: a03556213f0924f4f87946130963ed01, type: 3}
   - id: 5
-    type: 0
+    type: 2
     among: 2
     sprite: {fileID: 21300000, guid: 41c830411830ac94e8ce4e210c33218d, type: 3}
   - id: 6
@@ -43,11 +43,11 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2766f1cabf4899343b3b74d171ba19c0, type: 3}
   - id: 7
     type: 0
-    among: 2
+    among: 4
     sprite: {fileID: 21300000, guid: a8588401dcd7cbb46b55bba03fd3e4d4, type: 3}
   - id: 8
     type: 1
-    among: 1
+    among: 2
     sprite: {fileID: 21300000, guid: 8a32f4d4d7242b24982d02602f1a59c4, type: 3}
   - id: 9
     type: 1
@@ -65,3 +65,7 @@ MonoBehaviour:
     type: 1
     among: 5
     sprite: {fileID: 21300000, guid: 544bc60d76e34e0468dbb369c10db25e, type: 3}
+  - id: 13
+    type: 0
+    among: 5
+    sprite: {fileID: 21300000, guid: 9b62e6825f235e3479c382a2c8fa2c4e, type: 3}
