@@ -9,18 +9,28 @@ public class CreateItems : MonoBehaviour
     [SerializeField, Tooltip("生成するItemPrefab")]
     private GameObject itemPrefab;
 
+    [SerializeField, Tooltip("生成する爆弾")]
+    private GameObject bombPrefab;
+
+    [SerializeField, Tooltip("爆弾生成割合"), Range(0, 50)]
+    private int bombGenerationRate = 0;
+
+    [SerializeField, Tooltip("ブロンズメダルのライン")]
+    private int bornzeLine = 50000;
+    
     [SerializeField, Tooltip("生成時間間隔")]
     private float generatingTimeSpacing;
     
     [SerializeField, Tooltip("進行方向")]
     private bool isLeftGo;
-    [SerializeField, Tooltip("青いゴミ箱")]
-    private ControlDustBox controlDustBox;
 
     private GameObject generatedItem;
     private ItemBase itemBase;
     private int itemCount;
     private float elapsedTime;
+
+    private int randomNum;
+    private GameObject generatingItem;
 
     private void Start()
     {
@@ -40,9 +50,18 @@ public class CreateItems : MonoBehaviour
 
     private void CreateItem()
     {
-        generatedItem = Instantiate(itemPrefab, transform.position, Quaternion.identity, transform);
+        randomNum = Random.Range(0, 100);
+        if (randomNum < bombGenerationRate)
+        {
+            generatingItem = bombPrefab;
+        }
+        else
+        {
+            generatingItem = itemPrefab;
+        }
+        generatedItem = Instantiate(generatingItem, transform.position, Quaternion.identity, transform);
         generatedItem.GetComponent<MoveStage>().SetTravelingDirection(isLeftGo);
         itemBase = generatedItem.GetComponent<ItemBase>();
-        itemBase.SetItemID(Random.Range(0, itemCount));
+        if (randomNum >= bombGenerationRate) itemBase.SetItemID(Random.Range(0, itemCount));
     }
 }

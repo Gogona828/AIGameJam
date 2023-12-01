@@ -63,12 +63,13 @@ public class DragObject : MonoBehaviour, IDragHandler
             itemBase.RemoveCopyItem();
             Destroy(gameObject);
         }
-        //
+        // 爆弾と混ぜたら爆発する
         else if (otherItemBase?.GetItemType() == ItemDataBase.ItemType.Black || itemBase.GetItemType() == ItemDataBase.ItemType.Black)
         {
             itemBase.RemoveCopyItem();
             Destroy(closestItem);
             Destroy(gameObject);
+            DustManager.instance.ExplodeDustBox();
         }
         // アイテム同士のタイプが違えば混ぜられない
         else if (otherItemBase?.GetItemType() != itemBase?.GetItemType())

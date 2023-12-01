@@ -52,6 +52,7 @@ public class ItemBase : MonoBehaviour
     #region 取得系
     private void GetItemData()
     {
+        if (itemType == ItemDataBase.ItemType.Black) return;
         itemType = itemData.type;
         if (!isCopied) itemAmong = itemData.among;
         if (!isCopied) itemImage.sprite = itemData.sprite;

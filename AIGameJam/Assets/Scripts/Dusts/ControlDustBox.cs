@@ -21,6 +21,9 @@ public class ControlDustBox : MonoBehaviour
     private Sprite closedDifferencial;
     [SerializeField, Tooltip("開いている差分")]
     private Sprite openingDifferencial;
+
+    [SerializeField, Tooltip("爆弾で減少する量")]
+    private int amountDecreaseInBomb;
     [SerializeField]
     private MoveBackGround moveBG;
 
@@ -133,5 +136,10 @@ public class ControlDustBox : MonoBehaviour
     public ItemDataBase.ItemType GetBoxType()
     {
         return boxType;
+    }
+
+    public void DecreaseStoringQuantity()
+    {
+        storingQuantity /= 2;
     }
 }
