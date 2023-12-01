@@ -38,6 +38,7 @@ public class SceneChangeButton : MonoBehaviour
     IEnumerator LoadYourAsyncScene()
     {
         yield return new WaitForSeconds(1.0f);
+        StartGame.shouldStartingGame = false;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LoadSceneName);
 
 
