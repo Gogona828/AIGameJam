@@ -72,7 +72,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fad1e4db25f2aa54895ceee1dee4da0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a248f270ab2e17d4095a2efd62f3588a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldUpPointer: 0
+  dragObject: {fileID: 0}
 --- !u!114 &8437145088916674385
 MonoBehaviour:
   m_ObjectHideFlags: 0

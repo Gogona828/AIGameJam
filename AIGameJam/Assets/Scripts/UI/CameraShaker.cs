@@ -5,11 +5,12 @@ using DG.Tweening;
 
 public class CameraShaker : MonoBehaviour
 {
-    [SerializeField] Camera _camera;
+    public GameObject _maincamera;
 
     public void CameraShake()
     {
-        _camera.DOShakePosition(1.0f);
+        //_maincamera.transform.DOKill();
+        _maincamera.transform.DOShakePosition(2.0f,10f);
     }
 
 }
