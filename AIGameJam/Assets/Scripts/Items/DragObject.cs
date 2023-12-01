@@ -13,6 +13,7 @@ public class DragObject : MonoBehaviour, IDragHandler
     private ItemBase itemBase;
     private ItemBase otherItemBase;
 
+
     private void Start()
     {
         itemBase = GetComponent<ItemBase>();
@@ -66,10 +67,17 @@ public class DragObject : MonoBehaviour, IDragHandler
         // 爆弾と混ぜたら爆発する
         else if (otherItemBase?.GetItemType() == ItemDataBase.ItemType.Black || itemBase.GetItemType() == ItemDataBase.ItemType.Black)
         {
+            GameObject.Find("BombEffecter").GetComponent<BombExplode>().BombExplodeEffect(closestItem);//追記
             itemBase.RemoveCopyItem();
             Destroy(closestItem);
             Destroy(gameObject);
-            DustManager.instance.ExplodeDustBox();
+
+
+
+            //DustManager.instance.ExplodeDustBox();
+
+
+
         }
         // アイテム同士のタイプが違えば混ぜられない
         else if (otherItemBase?.GetItemType() != itemBase?.GetItemType())

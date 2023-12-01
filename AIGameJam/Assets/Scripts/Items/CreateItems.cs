@@ -24,6 +24,7 @@ public class CreateItems : MonoBehaviour
     [SerializeField, Tooltip("進行方向")]
     private bool isLeftGo;
 
+
     private GameObject generatedItem;
     private ItemBase itemBase;
     private int itemCount;

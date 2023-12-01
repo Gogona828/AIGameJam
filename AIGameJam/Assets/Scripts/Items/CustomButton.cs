@@ -12,7 +12,7 @@ public class CustomButton : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     private Transform parentObject;
     private ItemBase itemBase;
     private ItemBase otherItemBase;
-    private DragObject dragObject;
+    public DragObject dragObject; //爆発処理の為publicに変更
 
     private void Start()
     {
