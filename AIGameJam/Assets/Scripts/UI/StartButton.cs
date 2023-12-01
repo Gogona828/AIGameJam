@@ -12,6 +12,10 @@ public class StartButton : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip BGM;
 
+    [SerializeField] AudioSource seAudioSource;
+    [SerializeField] AudioClip SE1;
+    [SerializeField] AudioClip SE2;
+
     void Start()
     {
         if (tweenButton != null)
@@ -27,12 +31,12 @@ public class StartButton : MonoBehaviour
     {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(StartBoard.DOFade(0, 1.0f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(0.5f)
-            .OnComplete(() => { StartBoard.gameObject.SetActive(false); ReadyGo.gameObject.SetActive(true); }))
+            .OnComplete(() => { StartBoard.gameObject.SetActive(false); ReadyGo.gameObject.SetActive(true);seAudioSource.PlayOneShot(SE1); }))
 
                 .Append(ReadyGo.DOFade(0, 2.0f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(1.0f)
             .OnComplete(() => ReadyGo.text = "Go!!"))
 
-                .Append(ReadyGo.DOFade(1.0f, 0.3f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).OnComplete(() => audioSource.PlayOneShot(BGM)))
+                .Append(ReadyGo.DOFade(1.0f, 0.3f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).OnComplete(() => { audioSource.PlayOneShot(BGM); seAudioSource.PlayOneShot(SE2); }))
 
                 .Append(ReadyGo.DOFade(0f, 0.2f).SetLink(gameObject).SetUpdate(true).SetEase(Ease.OutQuad).SetDelay(0.5f)
                 .OnComplete(() => {

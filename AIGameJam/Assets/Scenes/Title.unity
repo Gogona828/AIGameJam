@@ -1180,6 +1180,7 @@ GameObject:
   - component: {fileID: 1819660842}
   - component: {fileID: 1819660845}
   - component: {fileID: 1819660844}
+  - component: {fileID: 1819660846}
   m_Layer: 5
   m_Name: HowtoPlay
   m_TagString: Untagged
@@ -1275,6 +1276,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1819660846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819660840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e546910cfc5df024ea61e97d35f9272b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 1819660844}
+  LoadSceneName: HowToPlay
+  BlackOut: {fileID: 721591015}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  TransitionSwitch: 1
 --- !u!1 &2135083568
 GameObject:
   m_ObjectHideFlags: 0

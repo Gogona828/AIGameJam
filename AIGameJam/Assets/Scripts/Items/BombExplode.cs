@@ -9,6 +9,9 @@ public class BombExplode : MonoBehaviour
     [SerializeField] GameObject explodeAnim;
     [SerializeField] CameraShaker cameraShaker;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip se;
+
     private GameObject instancePrefab;
 
 
@@ -17,6 +20,8 @@ public class BombExplode : MonoBehaviour
         cameraShaker.CameraShake();
         instancePrefab = Instantiate(explodeAnim,transform);
         instancePrefab.transform.position = closestItem.transform.position;
+
+        audioSource.PlayOneShot(se);
 
 
 
