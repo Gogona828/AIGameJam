@@ -27,6 +27,9 @@ public class ControlDustBox : MonoBehaviour
     [SerializeField]
     private MoveBackGround moveBG;
 
+    [SerializeField, Tooltip("チュートリアルかどうか。押すな危険")]
+    private bool isTutorial;
+
     private Image image;
     private bool isOpend = false;
     private ItemBase itemBase;
@@ -47,7 +50,7 @@ public class ControlDustBox : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= decreaseInterval && boxType != ItemDataBase.ItemType.Other)
         {
-            if (storingQuantity == 0) {
+            if (storingQuantity == 0 && !isTutorial) {
                 if (boxType == ItemDataBase.ItemType.Yellow) ExitGame.instance.EndGame();
                 elapsedTime = 0;
                 return;

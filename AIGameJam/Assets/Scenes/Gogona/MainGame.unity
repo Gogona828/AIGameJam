@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u540C\u3058\u8272\u306E\u30E2\u30CE\u306F\u307E\u3068\u307E\u308B\n\u307E\u3068\u3081\u308B\u3068\u30DC\u30FC\u30CA\u30B9"
+  m_text: "\u540C\u3058\u8272\u306E\u30E2\u30CE\u306F\u307E\u3068\u307E\u308B\n\u307E\u3068\u3081\u308B\u3068\u30DC\u30FC\u30CA\u30B9\u3002\u7206\u5F3E\u306B\u6CE8\u610F\uFF01"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
   m_sharedMaterial: {fileID: -2852651423796069751, guid: 7cbff409e3ec17040bbd3496d6308f01, type: 2}
@@ -16829,6 +16829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionSample
       objectReference: {fileID: 0}
+    - target: {fileID: 1858598075224155500, guid: 0310e70c13cc149efb9cd1204607d05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7884312775662768131, guid: 0310e70c13cc149efb9cd1204607d05e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16899,7 +16903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7884312775662768131, guid: 0310e70c13cc149efb9cd1204607d05e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -72.142334
+      value: -37.4
       objectReference: {fileID: 0}
     - target: {fileID: 7884312775662768131, guid: 0310e70c13cc149efb9cd1204607d05e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

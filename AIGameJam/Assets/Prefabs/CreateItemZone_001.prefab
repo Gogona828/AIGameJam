@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 9064722894430624681, guid: 84850c883e53fa1409cb177aa822a683, type: 3}
   bombPrefab: {fileID: 9064722894430624681, guid: 5d3ed5a7586413649b446c3332801c16, type: 3}
-  bombGenerationRate: 22
+  bombGenerationRate: 0
   bornzeLine: 50000
   generatingTimeSpacing: 1.5
   isLeftGo: 0
