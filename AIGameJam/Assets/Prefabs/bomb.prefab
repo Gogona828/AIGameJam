@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5236197819215721820}
   - component: {fileID: 5483351006513758944}
   m_Layer: 5
-  m_Name: item
+  m_Name: bomb
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fad1e4db25f2aa54895ceee1dee4da0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,7 +111,7 @@ MonoBehaviour:
   isDuringDrag: 0
   isCopied: 0
   itemID: 0
-  itemType: 0
+  itemType: 4
   itemAmong: 0
   rateGettingLarge: 15
   imagesWhenMixed:

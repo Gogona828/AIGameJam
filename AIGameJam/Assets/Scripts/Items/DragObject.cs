@@ -44,13 +44,14 @@ public class DragObject : MonoBehaviour, IDragHandler
         }
 
         otherItemBase = closestItem.GetComponent<ItemBase>();
+        // アイテムが複製物だったりタグがないものだったら削除
         if (itemBase?.GetCopyItem() == closestItem || closestItem.CompareTag("Untagged"))
         {
             Destroy(gameObject);
             return;
         }
-        // if (closestItem.TryGetComponent(out ItemBase _itemBase)) otherItemBase = _itemBase;
         
+        // 一番近いアイテムがDustBoxであれば中に入れる
         if (closestItem.TryGetComponent(out ControlDustBox _controlDustBox))
         {
             if (itemBase.GetItemType() != _controlDustBox.GetBoxType() && _controlDustBox.GetBoxType() != ItemDataBase.ItemType.Other)
@@ -62,11 +63,21 @@ public class DragObject : MonoBehaviour, IDragHandler
             itemBase.RemoveCopyItem();
             Destroy(gameObject);
         }
+        // 爆弾と混ぜたら爆発する
+        else if (otherItemBase?.GetItemType() == ItemDataBase.ItemType.Black || itemBase.GetItemType() == ItemDataBase.ItemType.Black)
+        {
+            itemBase.RemoveCopyItem();
+            Destroy(closestItem);
+            Destroy(gameObject);
+            DustManager.instance.ExplodeDustBox();
+        }
+        // アイテム同士のタイプが違えば混ぜられない
         else if (otherItemBase?.GetItemType() != itemBase?.GetItemType())
         {
             Debug.Log($"can't mix {otherItemBase?.GetItemType()} and {itemBase?.GetItemType()}");
             return;
         }
+        // アイテム同士のタイプが同じであれば混ぜる
         else
         {
             if (itemBase.GetItemAmong() >= 10 || otherItemBase.GetItemAmong() >= 10) return;

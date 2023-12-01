@@ -29,14 +29,11 @@ public class ApplyOutline : MonoBehaviour
             case ItemDataBase.ItemType.Blue:
                 image.material = outlines[2];
                 break;
+            case ItemDataBase.ItemType.Black:
+                image.material = outlines[3];
+                break;
             default: 
                 break;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
