@@ -10,7 +10,7 @@ public class ItemDataBase : ScriptableObject
     
     public enum ItemType
     {
-        Red, Yellow, Blue, Other
+        Red, Yellow, Blue, Other, Black
     }
     [System.Serializable]
     public class ItemData

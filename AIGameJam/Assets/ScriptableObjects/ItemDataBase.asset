@@ -69,3 +69,7 @@ MonoBehaviour:
     type: 0
     among: 5
     sprite: {fileID: 21300000, guid: 9b62e6825f235e3479c382a2c8fa2c4e, type: 3}
+  - id: 14
+    type: 4
+    among: 1
+    sprite: {fileID: 21300000, guid: fad1e4db25f2aa54895ceee1dee4da0b, type: 3}
