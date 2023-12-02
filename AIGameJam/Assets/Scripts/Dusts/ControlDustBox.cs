@@ -30,6 +30,8 @@ public class ControlDustBox : MonoBehaviour
     [SerializeField, Tooltip("チュートリアルかどうか。押すな危険")]
     private bool isTutorial;
 
+    private SEPlayer _SEPlayer;
+
     private Image image;
     private bool isOpend = false;
     private ItemBase itemBase;
@@ -42,6 +44,8 @@ public class ControlDustBox : MonoBehaviour
         if (boxType != ItemDataBase.ItemType.Other) storingQuantity = storingMaxQuantity / 2;
         else storingQuantity = 0;
         MoveGauge();
+
+        _SEPlayer =  GameObject.Find("SEPlayer").GetComponent<SEPlayer>(); //絶対名前変えるなよ
     }
 
     private void FixedUpdate()
@@ -72,11 +76,13 @@ public class ControlDustBox : MonoBehaviour
         Debug.Log("open!");
         isOpend = true;
         image.sprite = openingDifferencial;
+        _SEPlayer.SEPlayRequest(2);
     }
 
     public void CloseDustBox()
     {
         image.sprite = closedDifferencial;
+        _SEPlayer.SEPlayRequest(3);
     }
 
     public void StoreGarbage()

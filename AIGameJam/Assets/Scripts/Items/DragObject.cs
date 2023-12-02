@@ -13,10 +13,12 @@ public class DragObject : MonoBehaviour, IDragHandler
     private ItemBase itemBase;
     private ItemBase otherItemBase;
 
+    private SEPlayer _SEPlayer;
 
     private void Start()
     {
         itemBase = GetComponent<ItemBase>();
+        _SEPlayer = GameObject.Find("SEPlayer").GetComponent<SEPlayer>(); //絶対名前変えるなよ
     }
 
     public void OnDrag(PointerEventData data)
@@ -60,6 +62,8 @@ public class DragObject : MonoBehaviour, IDragHandler
                 Destroy(gameObject);
                 return;
             }
+            _SEPlayer.SEPlayRequest(4);
+
             _controlDustBox.StoreGarbage();
             itemBase.RemoveCopyItem();
             Destroy(gameObject);
@@ -83,6 +87,7 @@ public class DragObject : MonoBehaviour, IDragHandler
         else if (otherItemBase?.GetItemType() != itemBase?.GetItemType())
         {
             Debug.Log($"can't mix {otherItemBase?.GetItemType()} and {itemBase?.GetItemType()}");
+            _SEPlayer.SEPlayRequest(5);
             return;
         }
         // アイテム同士のタイプが同じであれば混ぜる
@@ -91,6 +96,7 @@ public class DragObject : MonoBehaviour, IDragHandler
             if (itemBase.GetItemAmong() >= 10 || otherItemBase.GetItemAmong() >= 10) return;
             Debug.Log("mixed!");
             itemBase.MixItem(closestItem, closestItem.GetComponent<ItemBase>());
+            _SEPlayer.SEPlayRequest(1);
         }
     }
 
