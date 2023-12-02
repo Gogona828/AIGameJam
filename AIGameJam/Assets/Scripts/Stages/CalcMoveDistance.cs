@@ -18,12 +18,21 @@ public class CalcMoveDistance : MonoBehaviour
     [SerializeField, Tooltip("赤いゴミ箱を参照する")]
     private ControlDustBox controlDustBox;
 
+    [SerializeField, Tooltip("時間の取得")]
+    private MeasureTime measureTime;
+
     private float pastPosition;
+    private float elapsedTime = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         pastPosition = transform.localPosition.y;
+    }
+
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
     }
 
     public void CalcDistance(float _nowPositionY)
@@ -33,7 +42,7 @@ public class CalcMoveDistance : MonoBehaviour
 
         if (moveDistance > 0)
         {
-            totalMoveDistance += moveDistance;
+            totalMoveDistance += moveDistance * measureTime.GetElapsedTime();
             ShowText();
             pastPosition = _nowPositionY;
         }

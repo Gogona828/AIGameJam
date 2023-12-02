@@ -17,6 +17,9 @@ public class CreateItems : MonoBehaviour
 
     [SerializeField, Tooltip("ブロンズメダルのライン")]
     private int bornzeLine = 50000;
+
+    [SerializeField, Tooltip("移動距離の取得")]
+    private CalcMoveDistance calcMoveDistance;
     
     [SerializeField, Tooltip("生成時間間隔")]
     private float generatingTimeSpacing;
@@ -52,6 +55,7 @@ public class CreateItems : MonoBehaviour
     private void CreateItem()
     {
         randomNum = Random.Range(0, 100);
+        bombGenerationRate = (int)calcMoveDistance.GetTotalMoveDistance() / bornzeLine * 50;
         if (randomNum < bombGenerationRate)
         {
             generatingItem = bombPrefab;

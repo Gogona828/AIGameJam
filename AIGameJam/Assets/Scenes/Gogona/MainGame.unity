@@ -1140,6 +1140,7 @@ MonoBehaviour:
   openingDifferencial: {fileID: 2078787443, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   amountDecreaseInBomb: 0
   moveBG: {fileID: 0}
+  isTutorial: 0
 --- !u!1 &117694617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,6 +2859,7 @@ MonoBehaviour:
   openingDifferencial: {fileID: -118052550, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   amountDecreaseInBomb: 0
   moveBG: {fileID: 0}
+  isTutorial: 0
 --- !u!1 &334226984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3516,6 +3518,9 @@ MonoBehaviour:
   ReadyGo: {fileID: 334226986}
   audioSource: {fileID: 1333056331}
   BGM: {fileID: 8300000, guid: 01bb4333468655f4aa39876db5e0db5e, type: 3}
+  seAudioSource: {fileID: 0}
+  SE1: {fileID: 0}
+  SE2: {fileID: 0}
 --- !u!225 &438628934
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4776,6 +4781,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: calcMoveDistance
+      value: 
+      objectReference: {fileID: 1321146245}
     - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: generatingTimeSpacing
       value: 1.7
@@ -10106,6 +10115,7 @@ MonoBehaviour:
   totalMoveDistance: 0
   text: {fileID: 616143893}
   controlDustBox: {fileID: 1361430474}
+  measureTime: {fileID: 1965145753}
 --- !u!1 &1321630013
 GameObject:
   m_ObjectHideFlags: 0
@@ -10516,6 +10526,7 @@ MonoBehaviour:
   openingDifferencial: {fileID: -878684917, guid: 7127981a574d7d74ab09125686390c75, type: 3}
   amountDecreaseInBomb: 0
   moveBG: {fileID: 0}
+  isTutorial: 0
 --- !u!114 &1349447110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10962,6 +10973,7 @@ MonoBehaviour:
   openingDifferencial: {fileID: -620261752, guid: 3d562ed0e1120aa4fbd6e834a56b1ca7, type: 3}
   amountDecreaseInBomb: 0
   moveBG: {fileID: 1321146243}
+  isTutorial: 0
 --- !u!1 &1368516356
 GameObject:
   m_ObjectHideFlags: 0
@@ -11531,6 +11543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodeAnim: {fileID: 1858598075224155500, guid: 0310e70c13cc149efb9cd1204607d05e, type: 3}
   cameraShaker: {fileID: 346267051}
+  audioSource: {fileID: 0}
+  se: {fileID: 0}
 --- !u!1 &1409583183
 GameObject:
   m_ObjectHideFlags: 0
@@ -14448,6 +14462,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1349447109}
     - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: calcMoveDistance
+      value: 
+      objectReference: {fileID: 1321146245}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: generatingTimeSpacing
       value: 1.7
       objectReference: {fileID: 0}
@@ -16942,6 +16960,10 @@ PrefabInstance:
       propertyPath: controlDustBox
       value: 
       objectReference: {fileID: 1349447109}
+    - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
+      propertyPath: calcMoveDistance
+      value: 
+      objectReference: {fileID: 1321146245}
     - target: {fileID: 5821359625388723054, guid: 792d9d2518442a04fb8b34efa5ac830e, type: 3}
       propertyPath: generatingTimeSpacing
       value: 1.7
