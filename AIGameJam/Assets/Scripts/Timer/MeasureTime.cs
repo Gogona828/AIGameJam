@@ -50,4 +50,9 @@ public class MeasureTime : MonoBehaviour
             text.text = minute.ToString("00") + ":" + ((int)seconds).ToString("00");
         }
     }
+
+    public float GetElapsedTime()
+    {
+        return limitTime - remainingTime;
+    }
 }
