@@ -55,7 +55,8 @@ public class CreateItems : MonoBehaviour
     private void CreateItem()
     {
         randomNum = Random.Range(0, 100);
-        bombGenerationRate = (int)calcMoveDistance.GetTotalMoveDistance() / bornzeLine * 50;
+        bombGenerationRate = (int)calcMoveDistance.GetTotalMoveDistance() / bornzeLine * 30;
+        if (bombGenerationRate >= 20) bombGenerationRate = 20;
         if (randomNum < bombGenerationRate)
         {
             generatingItem = bombPrefab;
