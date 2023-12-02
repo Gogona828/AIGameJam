@@ -132,7 +132,7 @@ public class ItemBase : MonoBehaviour
     public void MixItem(GameObject _mixTarget, ItemBase _itemBase)
     {
         Debug.Log("mix!");
-        _itemBase.itemAmong += itemAmong;
+        _itemBase.itemAmong += itemAmong+1;
         _mixTarget.transform.localScale += transform.localScale * _itemBase.itemAmong / rateGettingLarge;
         _mixTarget.gameObject.GetComponent<Image>().sprite = imagesWhenMixed[(int)itemType];
         Destroy(gameObject);

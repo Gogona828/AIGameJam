@@ -16,7 +16,7 @@ public class ShowResultText : MonoBehaviour
     {
         text.text = calcMoveDistance.GetTotalMoveDistance().ToString("0#,0");
         if (calcMoveDistance.GetTotalMoveDistance() >= 50000) medals[0].SetActive(true);
-        if (calcMoveDistance.GetTotalMoveDistance() >= 1000000) medals[1].SetActive(true);
-        if (calcMoveDistance.GetTotalMoveDistance() >= 1000000000) medals[2].SetActive(true);
+        if (calcMoveDistance.GetTotalMoveDistance() >= 100000) medals[1].SetActive(true);
+        if (calcMoveDistance.GetTotalMoveDistance() >= 300000) medals[2].SetActive(true);
     }
 }
